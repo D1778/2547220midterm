@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <title>COFFEE HUB</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  
+</head>
+    <body class="bg-fixed text-white bg-center bg-cover bg-blend-overlay bg-black/30" style="background-image:url('2.jpg');">
+ <header class="bg-white/15">
+    <nav class="flex items-center justify-between px-12 h-16">
+     <a href="#" class="text-3xl font-extralight ">COFFEEHUB</a>
+     <div class="dropdownmenu  absolute -top-full max-lg:bg-white/15 left-0  w-full flex flex-col gap-6 items-center py-2 text-lg lg:static lg:flex-row lg:justify-between">
+        <ul class="flex flex-col gap-6 lg:flex-row lg:gap-8 lg:ml-auto">
+            <li class="hover:underline cursor-pointer"><a href="home.html">Home</a></li>
+            <li class="hover:underline cursor-pointer"><a href="main.html">Coffee Cup</a></li>
+            <li class="hover:underline cursor-pointer"><a href="contact.html"> Contact</a></li>
+        </ul>
+     </div>
+     <div class="toggle lg:hidden">
+     <i class="fa-solid fa-bars fa-lg"></i></div>
+    </nav>
+ </header>
+ <div class="flex justify-center my-6">
+<main>
+        <h2 class="font-serif text-3xl text-white mb-10">GEOLOCATION OF THE COFFEE</h2>
+<iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=72.54821777343751%2C12.087667262738698%2C79.61242675781251%2C15.728813770533979&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?#map=8/13.915/76.080">View Larger Map</a></small>
+
+        <p>Latitude: <span id="lat" ></span></p>
+         <p>Longitude: <span id="lon" ></span></p>
+          <p>TimeStamp: <span id="timestamp" ></span></p>
+          <div id="error"></div>
+    </main>
+
+    <script>
+        window.onload = function(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(getPositions, showError);
+            }else {
+                console.log("Browser doesn't support Geolocation")                
+            }
+        }
+      function getPositions(position){
+            document.getElementById("lat").innerText= position.coords.latitude;
+            document.getElementById("lon").innerText= position.coords.longitude;
+            document.getElementById("timestamp").innerText=new Date(position.timestamp)
+        }
+    function showError(error){
+            let msg="";
+            switch(error.code){
+                case error.PERMISSION_DENIED:
+                    msg="User Denied Permission";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    msg="Not able to fetch the user position";
+                    break;
+                case error.TIMEOUT:
+                    msg="Time out";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    msg="Unknown Error";
+                    break;
+            }
+            displayError(msg)
+        }
+
+        function displayError(msg){
+            document.getElementById("error").innerText=msg;
+        }
+    </script>
+</div>
+ <script>
+const togglebtn=document.querySelector(".toggle");
+const dropdown=document.querySelector(".dropdownmenu");
+togglebtn.addEventListener("click",()=>{  
+dropdown.classList.toggle('top-16');})
+ </script>
+
+    <h1 class="text-center font-serif text-4xl font-bold mt-14">YOUR COFFEE EXPERIENCE SHARE WITH US!!</h1>
+ <main class="w-1/2 translate-x-96 mt-5 sm:translate-x-60">
+  <form>
+    <input type="text" placeholder="Name" class="w-full mb-3 p-2 border rounded text-black" >
+    
+    <input type="text" placeholder="Last Name" class="w-full mb-3 p-2 border rounded text-black" >
+    
+ <input type="text" placeholder="YOUR FEEDBACK" class="w-full mb-3 p-2 border rounded text-black" >
+    
+    <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
+      Submit
+    </button>
+    <div class="bg-blue-700/25 mt-5 w-auto shadow rounded-lg">
+    <h1 class="text-center font-serif">THANKS FOR SHARING YOUR WONDERFUL FEEDBACK!!</h1>
+</div>
+  </form></main>
+
+
+ <footer class="bg-black">
+  <footer class="bg-gray-800 text-white text-center py-12 mt-10">
+  <p class="text-sm">
+    Developed by <span class="font-semibold">DINU DG</span><span id="currentDate"></span><br>
+    &copy; 2025 COFFEEHUB. All rights reserved.
+  </p>
+</footer>
+ </footer>
+    </body>
+</html>

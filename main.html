@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>COFFEE HUB</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  
+</head>
+    <body class="bg-fixed text-white bg-center bg-cover bg-blend-overlay bg-black/30" style="background-image:url('2.jpg');">
+ <header class="bg-white/15">
+    <nav class="flex items-center justify-between px-12 h-16">
+     <a href="#" class="text-3xl font-extralight ">COFFEEHUB</a>
+     <div class="dropdownmenu  absolute -top-full max-lg:bg-white/15 left-0  w-full flex flex-col gap-6 items-center py-2 text-lg lg:static lg:flex-row lg:justify-between">
+        <ul class="flex flex-col gap-6 lg:flex-row lg:gap-8 lg:ml-auto">
+            <li class="hover:underline cursor-pointer"><a href="home.html">Home</a></li>
+            <li class="hover:underline cursor-pointer"><a href="main.html">Coffee Cup</a></li>
+            <li class="hover:underline cursor-pointer"><a href="contact.html"> Contact</a></li>
+        </ul>
+     </div>
+     <div class="toggle lg:hidden">
+     <i class="fa-solid fa-bars fa-lg"></i></div>
+    </nav>
+ </header>
+
+
+
+ <main>
+<input type="text" id="title" placeholder="search by title" class="text-black px-4 py-1 rounded w-64 translate-x-36 border-blue-500 border-solid mt-20">
+<div class="flex justify-center gap-4 my-4">
+        <select id="sorttitle" class="px-3 py-1 rounded ml-20 text-black">
+            <option value="">SORT THE COFFEE BY TITLE</option>
+            <option value="az">ASCENDING</option>
+            <option value="az">DESCENDING</option>
+        </select>
+
+    </div>
+ </main>
+ <div id="products" class="flex flex-wrap gap-6 justify-center px-4"></div>
+ </main>
+
+
+ <script>
+const togglebtn=document.querySelector(".toggle");
+const dropdown=document.querySelector(".dropdownmenu");
+togglebtn.addEventListener("click",()=>{  
+dropdown.classList.toggle('top-16');})
+ </script>
+<script src="coffee.js"></script>
+   
+ <footer class="bg-black">
+  <footer class="bg-gray-800 text-white text-center py-12 mt-10">
+  <p class="text-sm">
+    Developed by <span class="font-semibold">DINU DG</span><span id="currentDate"></span><br>
+    &copy; 2025 COFFEEHUB. All rights reserved.
+  </p>
+</footer>
+ </footer>
+    </body>
+</html>

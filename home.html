@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>COFFEE HUB</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  
+</head>
+    <body class="bg-fixed text-white bg-center bg-cover bg-blend-overlay bg-black/30" style="background-image:url('2.jpg');">
+ <header class="bg-white/15">
+    <nav class="flex items-center justify-between px-12 h-16">
+     <a href="#" class="text-3xl font-extralight ">COFFEEHUB</a>
+     <div class="dropdownmenu  absolute  -top-full max-lg:bg-black/20 left-0  w-full flex flex-col gap-6 items-center py-2 text-lg lg:static lg:flex-row lg:justify-between">
+        <ul class="flex flex-col gap-6 lg:flex-row lg:gap-8 lg:ml-auto">
+            <li class="hover:underline cursor-pointer"><a href="home.html">Home</a></li>
+            <li class="hover:underline cursor-pointer"><a href="main.html">Coffee Cup</a></li>
+            <li class="hover:underline cursor-pointer"><a href="contact.html"> Contact</a></li>
+        </ul>
+     </div>
+     <div class="toggle lg:hidden">
+     <i class="fa-solid fa-bars fa-lg"></i></div>
+    </nav>
+ </header>
+ <div class="flex justify-center my-6">
+  <video controls loop muted aria-label="video about" class="w-full lg:w-1/3 h-auto border border-orange-400 rounded-lg opacity-90">
+    <source src="Set2_Video.mp4" type="video/mp4">
+    <source src="Set2_Audio.mp3" type="Set2_Audio/mp3">
+    <track label="english" srclang="en" kind="subtitles" src="add.vtt">
+    not support!!
+  </video>
+</div>
+ <script>
+const togglebtn=document.querySelector(".toggle");
+const dropdown=document.querySelector(".dropdownmenu");
+togglebtn.addEventListener("click",()=>{  
+dropdown.classList.toggle('top-16');})
+ </script>
+<section>
+     <div class=" mt-10 flex justify-center">
+  <div class="w-full max-w-screen-xl flex flex-col items-center bg-orange-950/70 rounded-s-xl px-28 py-10">
+
+    <h2 class="text-4xl font-serif font-light mb-6 text-white text-center">
+      <i class="fas fa-image mr-2"></i> COFFEE GALLERY
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <figure>
+        <img src="1.jpg" alt="People" class=" h-40 rounded shadow-md">
+        <figcaption class="mt-2 text-lg font-light text-white">COFFEE</figcaption>
+      </figure>
+      <figure>
+        <img src="3.jpg" alt="People" class="h-40 rounded shadow-md">
+        <figcaption class="mt-2 text-lg font-light text-white">ENERGY</figcaption>
+      </figure>
+      <figure>
+        <img src="4.jpg" alt="People" class="h-40 rounded shadow-md">
+        <figcaption class="mt-2 text-lg font-light text-white">STRENGTH</figcaption>
+      </figure>
+      <figure>
+        <img src="5.jpg" alt="People" class="h-40 rounded shadow-md">
+        <figcaption class="mt-2 text-lg font-light text-white">MOTIVE</figcaption>
+      </figure>
+      
+    </div> </div></div>
+    </section>
+</section>
+   
+ <footer class="bg-black">
+  <footer class="bg-gray-800 text-white text-center py-12 mt-10">
+  <p class="text-sm">
+    Developed by <span class="font-semibold">DINU DG</span><span id="currentDate"></span><br>
+    &copy; 2025 COFFEEHUB. All rights reserved.
+  </p>
+</footer>
+ </footer>
+    </body>
+</html>
